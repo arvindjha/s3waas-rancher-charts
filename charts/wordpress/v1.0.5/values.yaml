@@ -32,30 +32,42 @@ wordpressUsername: user
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 ##
 wordpressEmail: user@example.com
-
-## First name
-## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-##
 wordpressFirstName: FirstName
-
-## Last name
-## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-##
 wordpressLastName: LastName
-
-## Blog name
-## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-##
 wordpressBlogName: User's Blog!
+
+applicationTag: S3WAAS_APP_TAG
+applicationTitle: WP_TITLE
+applicationURL: WP_URL
+applicationAlias: WP_ALIAS
+
+applicationAdminUsername: WP_ADMIN_USER
+applicationAdminEmail: WP_ADMIN_EMAIL
+applicationAdminPassword: WP_ADMIN_PASSWORD
+applicationMasterURL: http://master.ndcspcl1.awaas.gov.in
+
+applicationLanguageName: WP_LANG_NAME
+applicationLanguageCode: WP_LANG_CODE
+applicationLanguageLocale: WP_LANG_LOCALE
+applicationThemeName: WP_THEME_NAME
+
+
+applicationS3UploadsBucket: S3_UPLOADS_BUCKET
+applicationS3UploadsRegion: S3_UPLOADS_REGION
+applicationS3UploadsEndpoint: S3_UPLOADS_ENDPOINT
+applicationS3UploadsCDNURL: S3_UPLOADS_CDN_URL
+
+applicationLive: WP_LIVE
+applicationHTTPS: WP_HTTPS
 
 ## Table prefix
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 ##
-wordpressTablePrefix: wp_
+# wordpressTablePrefix: wp_
 
 ## Set to `yes` to allow the container to be started with blank passwords
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-allowEmptyPassword: "yes"
+# allowEmptyPassword: "yes"
 
 ## SMTP mail delivery configuration
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress/#smtp-configuration
@@ -164,9 +176,6 @@ readinessProbe:
   successThreshold: 1
 
 ## Configure the ingress resource that allows you to access the
-## Wordpress installation. Set up the URL
-## ref: http://kubernetes.io/docs/user-guide/ingress/
-##
 ingress:
   ## Set to true to enable ingress record generation
   enabled: false
@@ -210,8 +219,6 @@ ingress:
   #   certificate:
 
 ## Enable persistence using Persistent Volume Claims
-## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-##
 persistence:
   enabled: true
   ## wordpress data Persistent Volume Storage Class
@@ -230,8 +237,6 @@ persistence:
   size: 10Gi
 
 ## Configure resource requests and limits
-## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-##
 resources:
   requests:
     memory: 512Mi
