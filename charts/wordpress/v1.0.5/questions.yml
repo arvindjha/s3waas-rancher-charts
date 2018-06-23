@@ -10,12 +10,12 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.repository
-    default: "bitnami/wordpress"
+    default: "registry.s3waas.nic.in/application"
     description: "S3WaaS District Application image name"
     type: string
     label: S3WaaS District Application image name
   - variable: image.tag
-    default: "4.9.4"
+    default: "3.16.0"
     description: "S3WaaS District Application image tag"
     type: string
     label: Image Tag
