@@ -60,7 +60,7 @@ spec:
             secretKeyRef:
             {{- if .Values.mariadb.enabled }}
               name: {{ template "mariadb.fullname" . }}
-              key: wp-mariadb-password
+              key: MYSQL_WP_PASSWORD
             {{- else }}
               name: {{ printf "%s-%s" .Release.Name "externaldb" }}
               key: db-password
@@ -75,7 +75,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: {{ template "fullname" . }}
-              key: wp-admin-password
+              key: WP_ADMIN_PASSWORD
         - name: WP_ADMIN_EMAIL
           value: {{ .Values.applicationAdminEmail | quote }}
         # - name: WORDPRESS_FIRST_NAME
@@ -117,12 +117,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: {{ template "fullname" . }}
-              key: s3waas-object-storage-key
+              key: S3_UPLOADS_KEY
         - name: S3_UPLOADS_SECRET
           valueFrom:
             secretKeyRef:
               name: {{ template "fullname" . }}
-              key: s3waas-object-storage-secret
+              key: S3_UPLOADS_SECRET
         - name: S3_UPLOADS_REGION
           value: {{ .Values.applicationS3UploadsRegion | quote }}
         - name: S3_UPLOADS_ENDPOINT

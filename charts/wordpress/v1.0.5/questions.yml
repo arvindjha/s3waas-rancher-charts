@@ -176,12 +176,12 @@ questions:
   group: "Database Settings"
   subquestions:
   - variable: mariadb.mariadbDatabase
-    default: "wordpress"
+    default: "awaas_wp_db"
     description: "Database name to create"
     type: string
     label: MariaDB Database
   - variable: mariadb.mariadbUser
-    default: "wordpress"
+    default: "root"
     description: "Database user to create"
     type: string
     label: MariaDB User
