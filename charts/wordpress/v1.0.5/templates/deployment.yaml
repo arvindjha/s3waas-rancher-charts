@@ -31,6 +31,20 @@ spec:
         {{- else }}
           value: "no"
         {{- end }}
+
+        - name: MARIADB_HOST
+        {{- if .Values.mariadb.enabled }}
+          value: {{ template "mariadb.fullname" . }}
+        {{- else }}
+          value: {{ .Values.externalDatabase.host | quote }}
+        {{- end }}
+        - name: MARIADB_PORT_NUMBER
+        {{- if .Values.mariadb.enabled }}
+          value: "3306"
+        {{- else }}
+          value: {{ .Values.externalDatabase.port | quote }}
+        {{- end }}
+
         - name: MYSQL_WP_HOST
         {{- if .Values.mariadb.enabled }}
           value: {{ template "mariadb.fullname" . }}
@@ -59,13 +73,12 @@ spec:
           valueFrom:
             secretKeyRef:
             {{- if .Values.mariadb.enabled }}
-              name: {{ template "mariadb.fullname" . }}
+              name: {{ template "fullname" . }}
               key: MYSQL_WP_PASSWORD
             {{- else }}
               name: {{ printf "%s-%s" .Release.Name "externaldb" }}
               key: db-password
             {{- end }}
-
 
         - name: WP_TITLE
           value: {{ .Values.applicationTitle | quote }}

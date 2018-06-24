@@ -52,7 +52,7 @@ applicationLanguageLocale: hi_IN
 applicationThemeName: district-theme-2
 
 applicationDBUsername: root
-applicationDBPassword: ""
+# applicationDBPassword: ""
 
 applicationS3UploadsBucket: master
 applicationS3UploadsRegion: custom

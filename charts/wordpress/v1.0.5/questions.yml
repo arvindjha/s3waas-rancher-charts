@@ -108,16 +108,16 @@ questions:
   group: "District Application Settings"
 
 - variable: applicationDBUsername
-  default: "root"
+  default: "s3waas"
   description: "Database user to create"
   type: string
-  label: MariaDB User
+  label: Database Username
   group: "Application DB Settings"
 - variable: applicationDBPassword
   default: ""
   description: "password will be auto-generated if not specified"
   type: password
-  label: Admin Password
+  label: Database Password
   group: "Application DB Settings"
 
 - variable: applicationS3UploadsBucket
