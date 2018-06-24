@@ -113,12 +113,12 @@ mariadb:
   ## Create a database
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-on-first-run
   ##
-  mariadbDatabase: bitnami_wordpress
+  mariadbDatabase: awaas_wp_db
 
   ## Create a database user
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-user-on-first-run
   ##
-  mariadbUser: bn_wordpress
+  mariadbUser: s3waas
 
   ## Password for mariadbUser
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-user-on-first-run
