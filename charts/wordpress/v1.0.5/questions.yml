@@ -112,7 +112,7 @@ questions:
   description: "Database user to create"
   type: string
   label: MariaDB User
-  group: "District DB Settings"
+  group: "Application DB Settings"
 - variable: applicationDBPassword
   default: ""
   description: "password will be auto-generated if not specified"
