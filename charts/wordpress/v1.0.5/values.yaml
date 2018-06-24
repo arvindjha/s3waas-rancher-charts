@@ -51,6 +51,9 @@ applicationLanguageCode: hi
 applicationLanguageLocale: hi_IN
 applicationThemeName: district-theme-2
 
+applicationDBUsername: root
+applicationDBPassword: ""
+
 applicationS3UploadsBucket: master
 applicationS3UploadsRegion: custom
 applicationS3UploadsEndpoint: https://static.s3waas.gov.in

@@ -107,6 +107,19 @@ questions:
   description: "District Application URL on which it would be publicly available"
   group: "District Application Settings"
 
+- variable: applicationDBUsername
+  default: "root"
+  description: "Database user to create"
+  type: string
+  label: MariaDB User
+  group: "District DB Settings"
+- variable: applicationDBPassword
+  default: ""
+  description: "password will be auto-generated if not specified"
+  type: password
+  label: Admin Password
+  group: "Application DB Settings"
+
 - variable: applicationS3UploadsBucket
   default: "master"
   label: S3 Bucket
@@ -173,7 +186,7 @@ questions:
   required: true
   label: Install MariaDB
   show_subquestion_if: true
-  group: "Database Settings"
+  group: "MariaDB Settings"
   subquestions:
   - variable: mariadb.mariadbDatabase
     default: "awaas_wp_db"
