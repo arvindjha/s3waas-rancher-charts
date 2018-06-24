@@ -20,12 +20,12 @@ questions:
     type: string
     label: Image Tag
   - variable: mariadb.image.repository
-    default: "mariadb"
+    default: "bitnami/mariadb"
     description: "MariaDB image name"
     type: string
     label: MariaDB Image Name
   - variable: mariadb.image.tag
-    default: "10.3.7"
+    default: "10.1.32"
     description: "MariaDB image tag"
     type: string
     label: MariaDB Image Tag
@@ -181,7 +181,7 @@ questions:
     type: string
     label: MariaDB Database
   - variable: mariadb.mariadbUser
-    default: "root"
+    default: "s3waas"
     description: "Database user to create"
     type: string
     label: MariaDB User
