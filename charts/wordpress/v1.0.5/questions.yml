@@ -15,7 +15,7 @@ questions:
     type: string
     label: S3WaaS District Application image name
   - variable: image.tag
-    default: "3.16.0"
+    default: "3.15.0"
     description: "S3WaaS District Application image tag"
     type: string
     label: Image Tag
@@ -93,8 +93,8 @@ questions:
   required: true
   description: "District Application theme code, If you wan to choose theme 1 use district-theme-1"
   group: "District Application Settings"
-- variable: applicationURL
-  label: Random URL
+- variable: applicationStagingURL
+  label: Staging URL
   type: string
   required: true
   description: "District Application random generated url with s3waas.gov.in TLD"
@@ -106,34 +106,35 @@ questions:
   required: true
   description: "District Application URL on which it would be publicly available"
   group: "District Application Settings"
+
 - variable: applicationS3UploadsBucket
   default: "master"
   label: S3 Bucket
   type: string
   required: true
   description: "District Application Object Storage Bucket name"
-  group: "District Application Settings"
+  group: "Object Storage"
 - variable: applicationS3UploadsRegion
   default: "custom"
   label: S3 Region
   type: string
   required: true
   description: "District Application S3 Uploads bucket region"
-  group: "District Application Settings"
+  group: "Object Storage"
 - variable: applicationS3UploadsEndpoint
   default: "https://static.s3waas.gov.in"
   label: S3 URL
   type: string
   required: true
   description: "District Application S3 URL endpoint"
-  group: "District Application Settings"
+  group: "Object Storage"
 - variable: applicationS3UploadsCDNURL
   default: "https://cdn.s3waas.gov.in"
   label: S3 CDN
   type: string
   required: true
   description: "District Application S3 uploads CDN URL (Akamai)"
-  group: "District Application Settings"
+  group: "Object Storage"
 - variable: applicationLive
   default: "false"
   label: Make Live

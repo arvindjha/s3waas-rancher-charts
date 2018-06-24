@@ -36,9 +36,9 @@ image:
 # wordpressLastName: LastName
 # wordpressBlogName: User's Blog!
 
-applicationTag: 3.16.0
+applicationTag: 3.15.0
 applicationTitle: "District Website"
-applicationURL: ""
+applicationStagingURL: ""
 applicationAlias: ""
 
 applicationAdminUsername: admin
