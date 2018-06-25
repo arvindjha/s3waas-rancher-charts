@@ -152,7 +152,7 @@ spec:
           containerPort: 443
         livenessProbe:
           httpGet:
-            path: /wp-login.php
+            path: /version.php
           {{- if not .Values.healthcheckHttps }}
             port: http
           {{- else }}
@@ -162,7 +162,7 @@ spec:
 {{ toYaml .Values.livenessProbe | indent 10 }}
         readinessProbe:
           httpGet:
-            path: /wp-login.php
+            path: /version.php
           {{- if not .Values.healthcheckHttps }}
             port: http
           {{- else }}
