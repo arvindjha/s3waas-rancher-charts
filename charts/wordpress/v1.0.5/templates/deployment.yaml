@@ -108,8 +108,8 @@ spec:
           value: {{ .Values.applicationAlias | quote }}
         - name: WP_LIVE
           value: {{ .Values.applicationLive | quote }}
-        - name: WP_CDN
-          value: {{ .Values.applicationCDN | quote }}
+        # - name: WP_CDN
+        #   value: {{ .Values.applicationCDN | quote }}
         - name: S3WAAS_APP_TAG
           value: {{ .Values.applicationTag | quote }}
 
@@ -170,26 +170,8 @@ spec:
             scheme: HTTPS
           {{- end }}
 {{ toYaml .Values.readinessProbe | indent 10 }}
-        volumeMounts:
-        - mountPath: /bitnami/apache
-          name: wordpress-data
-          subPath: apache
-        - mountPath: /bitnami/wordpress
-          name: wordpress-data
-          subPath: wordpress
-        - mountPath: /bitnami/php
-          name: wordpress-data
-          subPath: php
         resources:
 {{ toYaml .Values.resources | indent 10 }}
-      volumes:
-      - name: wordpress-data
-      {{- if .Values.persistence.enabled }}
-        persistentVolumeClaim:
-          claimName: {{ .Values.persistence.existingClaim | default (include "fullname" .) }}
-      {{- else }}
-        emptyDir: {}
-      {{ end }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}

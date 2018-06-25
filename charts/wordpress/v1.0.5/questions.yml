@@ -15,7 +15,7 @@ questions:
     type: string
     label: S3WaaS District Application image name
   - variable: image.tag
-    default: "3.15.0"
+    default: "3.15.1"
     description: "S3WaaS District Application image tag"
     type: string
     label: Image Tag
@@ -259,7 +259,7 @@ questions:
     type: storageclass
     label: Default StorageClass for MariaDB
 - variable: serviceType
-  default: "NodePort"
+  default: "ClusterIP"
   description: "WordPress Service type"
   type: enum
   show_if: "ingress.enabled=false"
