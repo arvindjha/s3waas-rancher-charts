@@ -59,7 +59,7 @@ questions:
   label: Admin Password
   group: "District Application Settings"
 - variable: applicationMasterURL
-  default: "http://master.ndcspcl1.awaas.gov.in"
+  default: "master.ndcspcl1.awaas.gov.in"
   label: Golden Image URL
   type: string
   required: true
