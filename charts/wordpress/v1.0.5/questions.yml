@@ -10,7 +10,7 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.repository
-    default: "10.247.39.16:5000/application"
+    default: "registry.s3waas.gov.in:5000/application"
     description: "S3WaaS District Application image name"
     type: string
     label: S3WaaS District Application image name
